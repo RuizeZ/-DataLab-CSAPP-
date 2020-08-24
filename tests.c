@@ -58,10 +58,6 @@ int test_fitsBits(int x, int n)
   // int TMax_n = (1 << (n-1)) - 1;
   // printf("TMax_n: %d", TMax_n);
   // return x >= TMin_n && x <= TMax_n;
-
-
-
-
 int test_sign(int x) {
     if ( !x ) return 0;
     return (x < 0) ? -1 : 1;
