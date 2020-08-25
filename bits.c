@@ -204,7 +204,8 @@ int fitsBits(int x, int n) {
  *  Rating: 2
  */
 int sign(int x) {
-    return 2;
+
+  return ~((~x+1) >> 31) + 1 + (x >> 31);
 }
 /*
  * getByte - Extract byte n from int x
