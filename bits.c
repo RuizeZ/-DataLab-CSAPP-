@@ -234,7 +234,8 @@ int logicalShift(int x, int n) {
  *   Rating: 3
  */
 int addOK(int x, int y) {
-  return 2;
+  int addresult = x + y;
+  return ((x >> 31 & 1) ^ (y >> 31 & 1)) | (!((addresult >> 31 & 1) ^ (x >> 31 & 1)));
 }
 /*
  * invert - Return x with the n bits that begin at position p inverted
@@ -249,7 +250,8 @@ int addOK(int x, int y) {
  *   Rating: 3
  */
 int invert(int x, int p, int n) {
-  return 2;
+  int mask = ~(~0 << n) << p;
+  return x ^ mask;
 }
 // Rating: 4
 /*
