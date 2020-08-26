@@ -177,22 +177,12 @@ int thirdBits(void) {
  *   Rating: 2
  */
 int fitsBits(int x, int n) {
-  // printf("%d\n", x);
-  // print_binary(x);
-  // x = -2147483648;
-  // n = 32;
   int neg_n = ~ n + 1;
-  // printf("neg_n: %d\n",neg_n);
   int shift = 32 + neg_n;
-  // printf("shift = %d\n",shift);
   int temp1 = x << shift;
   int temp2 = temp1 >> shift;
-  //printf("%d\n",temp2);
   int temp3 = temp2 ^ x;
-  //printf("%d\n",temp3);
   int result = ! temp3;
-  // printf("result is: ");
-  // print_binary(temp2);
   return result;
 }
 /*
@@ -216,7 +206,9 @@ int sign(int x) {
  *   Rating: 2
  */
 int getByte(int x, int n) {
-  return 2;
+  int shift = n << 3;
+  int result = x >> shift;
+  return result & 0xff;
 }
 // Rating: 3
 /*
