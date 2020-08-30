@@ -263,7 +263,7 @@ int invert(int x, int p, int n) {
  */
 int bang(int x) {
 
-  return (!(x ^ 0)) | (x >> 31 & 0);;
+  return ((~(x|(~x+1)))>>31)&1 ;
 }
 // Extra Credit: Rating: 3
 /*
