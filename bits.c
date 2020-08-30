@@ -289,5 +289,5 @@ int conditional(int x, int y, int z) {
  *   Rating: 4
  */
 int isPower2(int x) {
-  return 2;
+  return !((x + ~0) & x) & !(x >> 31) & !(!x);
 }
