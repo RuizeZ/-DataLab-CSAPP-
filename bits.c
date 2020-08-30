@@ -262,7 +262,8 @@ int invert(int x, int p, int n) {
  *   Rating: 4
  */
 int bang(int x) {
-  return 2;
+
+  return (!(x ^ 0)) | (x >> 31 & 0);;
 }
 // Extra Credit: Rating: 3
 /*
