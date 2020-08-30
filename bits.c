@@ -263,7 +263,7 @@ int invert(int x, int p, int n) {
  */
 int bang(int x) {
 
-  return ((~(x|(~x+1)))>>31)&1 ;
+  return ((~(x|(~x+1)))>>31)&1;
 }
 // Extra Credit: Rating: 3
 /*
@@ -274,7 +274,10 @@ int bang(int x) {
  *   Rating: 3
  */
 int conditional(int x, int y, int z) {
-  return 2;
+  int ifcondition = ((x | (~x+1))>>31);
+  int yresult = ifcondition & y;
+  int zresult = ~ifcondition & z;
+  return yresult + zresult;
 }
 // Extra Credit: Rating: 4
 /*
