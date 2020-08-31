@@ -116,8 +116,12 @@ int doubleSize() {
   double * doubPtr1;
   double * doubPtr2;
   // Write code to compute size of a double.
+  doubPtr1 = doubArray;
+  doubPtr2 = doubPtr1 + 1;
+  double doub1 = (int)doubPtr1;
+  double doub2 = (int)doubPtr2;
 
-  return 2;
+  return doub2 - doub1;
 }
 
 /*
@@ -128,8 +132,10 @@ int pointerSize() {
   double ** ptrPtr1;
   double ** ptrPtr2;
   // Write code to compute size of a pointer.
+  ptrPtr1 = ptrArray;
+  ptrPtr2 = ptrPtr1 + 1;
 
-  return 2;
+  return (int)ptrPtr2 - (int)ptrPtr1;
 }
 
 /*
@@ -146,6 +152,7 @@ int changeValue() {
   int * intPtr1 = intArray;
   // Remember not to use constants greater than 255.
   // Remember to use * to dereference.
+  *(intPtr1 + 5) = 255 + 96;
 
   return intArray[5];
 }
@@ -156,7 +163,9 @@ int changeValue() {
  * Operators / and % and loops are NOT allowed.
  */
 int withinSameBlock(int *ptr1, int *ptr2) {
-  return 2;
+  int shiftptr1 = (int)ptr1 >> 6;
+  int shiftptr2 = (int)ptr2 >> 6;
+  return shiftptr1 == shiftptr2;
 }
 
 /*
@@ -167,5 +176,8 @@ int withinSameBlock(int *ptr1, int *ptr2) {
  * Operators / and % and loops are NOT allowed.
  */
 int withinArray(int * intArray, int size, int * ptr) {
-  return 2;
+  int lowerdiff = (int)ptr - (int)intArray;
+  int upperdiff = (int)(intArray + (size-1)) - (int)ptr;
+
+  return (lowerdiff >> 31) == (upperdiff >> 31);
 }
