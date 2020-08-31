@@ -103,8 +103,9 @@ int intSize() {
   int * intPtr1;
   int * intPtr2;
   // Write code to compute size of an integer.
-
-  return 2;
+  intPtr1 = intArray;
+  intPtr2 = intPtr1 + 1;
+  return (int)intPtr2 - (int)intPtr1;
 }
 
 /*
